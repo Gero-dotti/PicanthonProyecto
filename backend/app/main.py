@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.routers import search
 
 app = FastAPI(title="Picanthon API")
 
@@ -23,3 +24,7 @@ async def root():
 async def health_check():
     """Health check endpoint"""
     return {"status": "healthy"}
+
+
+# Register routers
+app.include_router(search.router, prefix="/api", tags=["searches"])
