@@ -1,0 +1,35 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle con gradiente -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Círculo de fondo -->
+  <circle cx="64" cy="64" r="60" fill="url(#bgGradient)"/>
+
+  <!-- Casa icono -->
+  <g transform="translate(32, 36)">
+    <!-- Techo -->
+    <path d="M32 8L4 28H60L32 8Z" fill="white" opacity="0.95"/>
+
+    <!-- Pared -->
+    <rect x="8" y="28" width="48" height="36" fill="white" opacity="0.95" rx="2"/>
+
+    <!-- Puerta -->
+    <rect x="24" y="42" width="16" height="22" fill="#2563eb" rx="1"/>
+
+    <!-- Ventanas -->
+    <rect x="14" y="34" width="12" height="10" fill="#93c5fd" rx="1"/>
+    <rect x="38" y="34" width="12" height="10" fill="#93c5fd" rx="1"/>
+
+    <!-- Manija de puerta -->
+    <circle cx="36" cy="54" r="1.5" fill="white"/>
+  </g>
+
+  <!-- Indicador "UY" en badge -->
+  <circle cx="96" cy="32" r="16" fill="#fbbf24"/>
+  <text x="96" y="38" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e3a8a" text-anchor="middle">UY</text>
+</svg>

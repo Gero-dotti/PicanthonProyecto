@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Buscador de Propiedades UY",
+  "version": "1.0.0",
+  "description": "Asistente IA que encuentra propiedades similares en MercadoLibre, InfoCasas y VeoCasas",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://www.mercadolibre.com.uy/*",
+    "https://www.infocasas.com.uy/*",
+    "https://www.veocasas.com/*",
+    "http://localhost:3000/*",
+    "https://api.openai.com/*"
+  ],
+  "action": {
+    "default_title": "Abrir Buscador de Propiedades"
+  },
+  "side_panel": {
+    "default_path": "popup/popup.html"
+  },
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
