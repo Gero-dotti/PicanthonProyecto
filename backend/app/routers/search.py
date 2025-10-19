@@ -14,6 +14,32 @@ from app.models import (
 router = APIRouter()
 
 
+@router.get("/searches", response_model=List[BusquedaResponse])
+async def get_all_searches():
+    """
+    Retrieve all search requests from the Busquedas table.
+
+    Returns:
+        List[BusquedaResponse]: List of all searches
+
+    Raises:
+        HTTPException: If database operation fails
+    """
+    try:
+        supabase = get_supabase_client()
+        response = supabase.table("Busquedas").select("*").execute()
+
+        if response.data is None:
+            return []
+
+        return [BusquedaResponse(**item) for item in response.data]
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Database error: {str(e)}",
+        )
+
+
 @router.post("/searches", response_model=BusquedaResponse, status_code=status.HTTP_201_CREATED)
 async def create_search(search_data: BusquedaCreate):
     """
