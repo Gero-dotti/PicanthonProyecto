@@ -19,9 +19,9 @@ Extensión de Chrome que usa IA para buscar propiedades en Uruguay (MercadoLibre
 
 ---
 
-## 📦 Descarga e Instalación
+## 📦 Descarga e Instalación (3 Pasos - Super Fácil)
 
-### Opción 1: Descarga Directa (Más Fácil)
+### Instalación Rápida
 
 1. **Descargá la extensión:**
    - Andá a [Releases](../../releases)
@@ -35,58 +35,29 @@ Extensión de Chrome que usa IA para buscar propiedades en Uruguay (MercadoLibre
    - Activá "Modo de desarrollador" (arriba a la derecha)
    - Click en "Cargar extensión sin empaquetar"
    - Seleccioná la carpeta que descomprimiste
-   - ¡Listo! ✅
+   - **¡Listo! Ya podés usarla** ✅
 
-4. **Configurá tu API Key:**
-   - Abrí el archivo `background.js` (dentro de la carpeta de la extensión)
-   - En la línea 5, reemplazá `'YOUR_OPENAI_API_KEY_HERE'` con tu API key de OpenAI
-   - Guardá el archivo
-   - Volvé a `chrome://extensions/` y recargá la extensión (botón ⟳)
+**No necesitás configurar nada más - la extensión ya viene lista para usar con IA incluida!**
 
-### Opción 2: Compilar desde el Código Fuente
+### Opción Avanzada: Compilar desde el Código Fuente
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/tu-usuario/tu-repo.git
+git clone https://github.com/Gero-dotti/PicanthonProyecto.git
 cd PicanthonProyecto
 
 # 2. Instalar dependencias
 cd extension
 npm install
 
-# 3. Configurar API Key
-# Editá extension/background.ts línea 5 con tu API key
-
-# 4. Compilar
+# 3. Compilar
 npm run build
 
-# 5. Cargar en Chrome
+# 4. Cargar en Chrome
 # Andá a chrome://extensions/
 # Activá "Modo de desarrollador"
 # "Cargar extensión sin empaquetar" → seleccioná extension/dist/
 ```
-
----
-
-## 🔑 Conseguir API Keys (GRATIS)
-
-### OpenAI API Key (Necesaria)
-
-1. Andá a [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-2. Creá una cuenta (te dan $5 de crédito gratis)
-3. Click en "Create new secret key"
-4. Copiá la key (comienza con `sk-...`)
-
-**Costo**: ~$0.01-0.05 USD por conversación (muy barato)
-
-### Tavily API Key (Opcional - para búsquedas reales)
-
-1. Andá a [https://tavily.com](https://tavily.com)
-2. Registrate (es gratis)
-3. Te dan 1,000 búsquedas gratis por mes
-4. Copiá tu API key
-
-Si no configurás Tavily, la extensión igual funciona pero muestra propiedades de ejemplo.
 
 ---
 
@@ -210,43 +181,43 @@ PicanthonProyecto/
 
 ## 🔧 Solución de Problemas
 
-### Error: "API Key inválida"
-- ✅ Verificá que pegaste bien la API key en `background.js` línea 5
-- ✅ Asegurate que la key empiece con `sk-`
-- ✅ Verificá que tengas créditos en OpenAI
-
-### No muestra propiedades
-- ✅ Configurá Tavily API key en el backend (opcional)
-- ✅ Probá con diferentes búsquedas
-- ✅ Verificá que la API local esté corriendo (si la usás)
-
 ### La extensión no carga
 - ✅ Asegurate de activar "Modo de desarrollador" en Chrome
 - ✅ Verificá que la carpeta tenga `manifest.json`
 - ✅ Revisá errores en `chrome://extensions/`
 
+### No muestra propiedades / "Failed to fetch"
+- ✅ Verificá tu conexión a internet
+- ✅ Probá con diferentes búsquedas más específicas
+- ✅ Intentá recargar la extensión (botón ⟳ en chrome://extensions/)
+
 ### Links no abren
-- ✅ Permitile a Chrome abrir popups
+- ✅ Permitile a Chrome abrir popups desde la extensión
 - ✅ Probá con click derecho → "Abrir en nueva pestaña"
+
+### La IA no responde bien
+- ✅ Sé más específico en tu búsqueda
+- ✅ Mencioná tipo de propiedad, ubicación y presupuesto
+- ✅ Ejemplo: "Apartamento 2 dormitorios Pocitos hasta 200 mil"
 
 ---
 
 ## 💰 Costos
 
-| Servicio | Costo | Incluido Gratis |
-|----------|-------|-----------------|
-| OpenAI GPT-4o-mini | $0.002/1K tokens | $5 USD al registrarte |
-| Tavily Search | $0 | 1,000 búsquedas/mes |
-| **Total por usuario** | **~$0.02-0.08** | Primeros meses gratis |
+**¡La extensión es GRATIS para los usuarios!**
+
+La IA y las búsquedas están incluidas - no tenés que pagar nada para usarla.
+
+*Nota: El desarrollador cubre los costos de API (~$0.02-0.08 por usuario)*
 
 ---
 
 ## 🔒 Privacidad y Seguridad
 
-- ✅ Tu API key se guarda localmente en tu navegador
-- ✅ Las conversaciones van directamente de tu navegador a OpenAI
-- ✅ No compartimos información con terceros
-- ✅ El código es open source - podés revisar todo
+- ✅ Las conversaciones son privadas y seguras
+- ✅ No guardamos ni compartimos tu información personal
+- ✅ Las búsquedas van directamente de la extensión a los portales inmobiliarios
+- ✅ El código es open source - podés revisar todo lo que hace
 
 ---
 
