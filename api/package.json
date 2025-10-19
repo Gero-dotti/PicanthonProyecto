@@ -1,0 +1,28 @@
+{
+  "name": "property-finder-api",
+  "version": "1.0.0",
+  "description": "Backend API for Property Finder Extension",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@tavily/core": "^0.5.12",
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "google-search-results-nodejs": "^2.1.0",
+    "openai": "^4.20.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
