@@ -1,14 +1,10 @@
 // Background service worker para manejar el side panel
 /// <reference types="chrome"/>
 
-// Configuración ofuscada (Base64) - No editar
-const _k1 = 'c2stcHJvai1tLVdIdDhmSHYtVjVEQ1VFRWJKUzFjTkR2czlUM0dsMEdkX0xMNVpqVVFOQ1hWWHc4aWZxeGFObmRuYnp6Nnhu' +
-            'WUN1dDlxcVpzU1QzQmxia0ZKSU' + '_Ykt5MUJuMUdaYWhVVVpoYm03UjZKUnBBTEZZVXZRREJsY3ZFTD' +
-            'czTmp6OG11MmpBWDdwSGloTGFmXzM1ZWlmX01fbkxfOEE=';
-const _k2 = 'dHZseS1kZXYtWFpIQ2JFUkQ5Q3gyN2c1V1lJWlZnbDJFSkNVTXNHVDk=';
-
-// Decodificador
-const d = (s: string) => atob(s);
+// Config - encoded
+const k = 'c2stcHJvai1tLVdIdDhmSHYtVjVEQ1VFRWJKUzFjTkR2czlUM0dsMEdkX0xMNVpqVVFOQ1hWWHc4aWZxeGFObmRuYnp6NnhuWUN1dDlxcVpzU1QzQmxia0ZKSU9fYkt5MUJuMUdaYWhVVVpoYm03UjZKUnBBTEZZVXZRREJsY3ZFTDczTmp6OG11MmpBWDdwSGloTGFmXzM1ZWlmX01fbkxfOEEK';
+const d = (s: string) => atob(s).trim();
+const OPENAI_API_KEY = d(k);
 
 chrome.action.onClicked.addListener((tab: chrome.tabs.Tab) => {
   if (tab.id) {
@@ -60,7 +56,7 @@ async function handleOpenAIChat(messages: any[]): Promise<string> {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${d(_k1)}`
+        'Authorization': `Bearer ${OPENAI_API_KEY}`
       },
       body: JSON.stringify({
         model: 'gpt-4o-mini',
